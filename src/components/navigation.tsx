@@ -7,7 +7,7 @@ export function Navigation() {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			const sections = ["hero", "now"];
+			const sections = ["hero", "now", "journal"];
 			//const sections = ["hero", "now", "projects", "journal"];
 			const scrollPosition = window.scrollY + 100;
 
@@ -42,7 +42,7 @@ export function Navigation() {
 		{ id: "hero", label: "Home" },
 		{ id: "now", label: "Now" },
 		//{ id: "projects", label: "Projects" },
-		//{ id: "journal", label: "Journal" },
+		{ id: "journal", label: "Journal", href: "https://notes.seanriley.dev" },
 	];
 
 	return (
@@ -58,19 +58,39 @@ export function Navigation() {
 
 					{/* Desktop Navigation */}
 					<div className="hidden md:flex space-x-8">
-						{navItems.map((item) => (
-							<button
-								key={item.id}
-								onClick={() => scrollToSection(item.id)}
-								className={`font-mono text-sm transition-colors cursor-pointer ${
-									activeSection === item.id
-										? "text-green-400"
-										: "text-gray-400 hover:text-gray-200"
-								}`}
-							>
-								{item.label}
-							</button>
-						))}
+						{navItems.map((item) => {
+							if (!item.href) {
+								return (
+									<button
+										key={item.id}
+										onClick={() => scrollToSection(item.id)}
+										className={`font-mono text-sm transition-colors cursor-pointer ${
+											activeSection === item.id
+												? "text-green-400"
+												: "text-gray-400 hover:text-gray-200"
+										}`}
+									>
+										{item.label}
+									</button>
+								);
+							}
+							if (item.href) {
+								return (
+									<a
+										href={item.href}
+										key={item.id}
+										target="_blank"
+										className={`font-mono text-sm transition-colors cursor-pointer ${
+											activeSection === item.id
+												? "text-green-400"
+												: "text-gray-400 hover:text-gray-200"
+										}`}
+									>
+										{item.label}
+									</a>
+								);
+							}
+						})}
 					</div>
 
 					{/* Mobile Navigation Toggle */}
