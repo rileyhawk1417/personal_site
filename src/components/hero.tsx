@@ -1,4 +1,5 @@
-import { Github, Linkedin, FileText, Terminal } from "lucide-react";
+import { FileText, Terminal } from "lucide-react";
+import { LinkedinIcon, GithubIcon } from "./icons";
 
 export function Hero() {
 	return (
@@ -35,8 +36,9 @@ export function Hero() {
 						rel="noopener noreferrer"
 						className="flex items-center space-x-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors group"
 					>
-						<Github
-							size={20}
+						<GithubIcon
+							width={20}
+							height={20}
 							className="group-hover:text-green-400 transition-colors"
 						/>
 						<span className="font-mono">GitHub</span>
@@ -47,8 +49,9 @@ export function Hero() {
 						rel="noopener noreferrer"
 						className="flex items-center space-x-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors group"
 					>
-						<Linkedin
-							size={20}
+						<LinkedinIcon
+							width={20}
+							height={20}
 							className="group-hover:text-blue-400 transition-colors"
 						/>
 						<span className="font-mono">LinkedIn</span>
