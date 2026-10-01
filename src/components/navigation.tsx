@@ -50,6 +50,7 @@ export function Navigation() {
 			<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex justify-between items-center h-16">
 					<button
+						type="button"
 						onClick={() => scrollToSection("hero")}
 						className="font-mono text-green-400 hover:text-green-300 transition-colors"
 					>
@@ -62,6 +63,7 @@ export function Navigation() {
 							if (!item.href) {
 								return (
 									<button
+										type="button"
 										key={item.id}
 										onClick={() => scrollToSection(item.id)}
 										className={`font-mono text-sm transition-colors cursor-pointer ${
@@ -95,6 +97,7 @@ export function Navigation() {
 
 					{/* Mobile Navigation Toggle */}
 					<button
+						type="button"
 						onClick={() => setIsOpen(!isOpen)}
 						className="md:hidden text-gray-400 hover:text-gray-200"
 					>
@@ -107,6 +110,7 @@ export function Navigation() {
 					<div className="md:hidden py-4 border-t border-gray-800">
 						{navItems.map((item) => (
 							<button
+								type="button"
 								key={item.id}
 								onClick={() => scrollToSection(item.id)}
 								className={`block w-full text-left py-2 font-mono text-sm transition-colors ${
