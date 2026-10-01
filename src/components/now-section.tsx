@@ -1,24 +1,26 @@
-import { Clock, Code, Wrench } from "lucide-react";
+import { Wrench, NotebookTabs, Disc3 } from "lucide-react";
 
 export function Now() {
 	const currentFocus = [
-		{
-			icon: <Code size={20} />,
-			title: "Next.js Monolith",
-			description:
-				"Testing architectural patterns for a large-scale application with server components and edge functions.",
-		},
 		{
 			icon: <Wrench size={20} />,
 			title: "Pomodoro Flutter App",
 			description:
 				"Building a minimalist productivity timer with custom animations and local notifications.",
 		},
+
 		{
-			icon: <Clock size={20} />,
-			title: "CI/CD Migration",
+			icon: <NotebookTabs size={20} />,
+			title: "Contextra-rs",
 			description:
-				"Moving legacy projects from Bitbucket Pipelines to AWS Amplify for better deployment workflows.",
+				"A project index tracker for all git projects locally built in rust",
+		},
+
+		{
+			icon: <Disc3 size={20} />,
+			title: "Hush Music Player",
+			description:
+				"An android music player, to help me build an audio book player",
 		},
 	];
 
@@ -30,7 +32,7 @@ export function Now() {
 						<span className="text-green-400 font-mono">/now</span>
 					</h2>
 					<p className="text-gray-400 font-mono text-sm">
-						What I'm focused on right now
+						What I&apos;m focused on right now
 					</p>
 				</div>
 
